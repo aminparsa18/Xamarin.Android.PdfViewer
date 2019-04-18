@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{31B55FFF-1A1E-4BC4-B9C5-06CEB454296F}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PdfViewer</RootNamespace>
+    <AssemblyName>PdfViewer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimationManager.cs" />
+    <Compile Include="CacheManager.cs" />
+    <Compile Include="DecodingAsyncTask.cs" />
+    <Compile Include="DragPinchManager.cs" />
+    <Compile Include="Exceptions\FileNotFoundException.cs" />
+    <Compile Include="Exceptions\PageRenderingException.cs" />
+    <Compile Include="Link\DefaultLinkHandler.cs" />
+    <Compile Include="Link\ILinkHandler.cs" />
+    <Compile Include="Listener\Callback.cs" />
+    <Compile Include="Listener\DrawEventArgs.cs" />
+    <Compile Include="Listener\ErrorEventArgs.cs" />
+    <Compile Include="Listener\LoadCompletedEventArgs.cs" />
+    <Compile Include="Listener\LongPressEventArgs.cs" />
+    <Compile Include="Listener\PageChangeEventArgs.cs" />
+    <Compile Include="Listener\PageErrorEventArgs.cs" />
+    <Compile Include="Listener\PageScrolledEventArgs.cs" />
+    <Compile Include="Listener\RenderedEventArgs.cs" />
+    <Compile Include="Listener\TapEventArgs.cs" />
+    <Compile Include="Model\LinkTapEvent.cs" />
+    <Compile Include="Model\PagePart.cs" />
+    <Compile Include="PagesLoader.cs" />
+    <Compile Include="PdfFile.cs" />
+    <Compile Include="PDFium\pdfDocument.cs" />
+    <Compile Include="PDFium\PdfiumCore.cs" />
+    <Compile Include="PDFium\PdfPasswordException.cs" />
+    <Compile Include="PDFium\Utils\Size.cs" />
+    <Compile Include="PDFium\Utils\SizeF.cs" />
+    <Compile Include="PdfView.cs" />
+    <Compile Include="RenderingHandler.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scroll\DefaultScrollHandle.cs" />
+    <Compile Include="Scroll\IScrollHandle.cs" />
+    <Compile Include="Source\AssetSource.cs" />
+    <Compile Include="Source\ByteArraySource.cs" />
+    <Compile Include="Source\FileSource.cs" />
+    <Compile Include="Source\DocumentSource.cs" />
+    <Compile Include="Source\InputStreamSource.cs" />
+    <Compile Include="Source\UriSource.cs" />
+    <Compile Include="Util\ArrayUtils.cs" />
+    <Compile Include="Util\OrderedSet\Algorithms.cs" />
+    <Compile Include="Util\OrderedSet\CollectionBase.cs" />
+    <Compile Include="Util\Constants.cs" />
+    <Compile Include="Util\FileUtils.cs" />
+    <Compile Include="Util\FitPolicy.cs" />
+    <Compile Include="Util\MathUtils.cs" />
+    <Compile Include="Util\OrderedSet\OrderedSet.cs" />
+    <Compile Include="Util\OrderedSet\RedBlack.cs" />
+    <Compile Include="Util\OrderedSet\Strings.cs" />
+    <Compile Include="Util\PageSizeCalculator.cs" />
+    <Compile Include="Util\SnapEdge.cs" />
+    <Compile Include="Util\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedNativeLibrary Include="lib\armeabi-v7a\libc++_shared.so" />
+    <EmbeddedNativeLibrary Include="lib\armeabi-v7a\libmodft2.so" />
+    <EmbeddedNativeLibrary Include="lib\armeabi-v7a\libmodpdfium.so" />
+    <EmbeddedNativeLibrary Include="lib\armeabi-v7a\libmodpng.so" />
+    <EmbeddedNativeLibrary Include="lib\x86\libc++_shared.so" />
+    <EmbeddedNativeLibrary Include="lib\x86\libmodft2.so" />
+    <EmbeddedNativeLibrary Include="lib\x86\libmodpdfium.so" />
+    <EmbeddedNativeLibrary Include="lib\x86\libmodpng.so" />
+    <EmbeddedNativeLibrary Include="lib\x86_64\libc++_shared.so" />
+    <EmbeddedNativeLibrary Include="lib\x86_64\libmodft2.so" />
+    <EmbeddedNativeLibrary Include="lib\x86_64\libmodpdfium.so" />
+    <EmbeddedNativeLibrary Include="lib\x86_64\libmodpng.so" />
+    <EmbeddedNativeLibrary Include="lib\arm64-v8a\libjniPdfium.so" />
+    <EmbeddedNativeLibrary Include="lib\arm64-v8a\libmodpdfium.so" />
+    <EmbeddedNativeLibrary Include="lib\arm64-v8a\libc++_shared.so" />
+    <EmbeddedNativeLibrary Include="lib\arm64-v8a\libmodft2.so" />
+    <EmbeddedNativeLibrary Include="lib\arm64-v8a\libmodpng.so" />
+    <EmbeddedNativeLibrary Include="lib\armeabi-v7a\libjniPdfium.so" />
+    <EmbeddedNativeLibrary Include="lib\x86\libjniPdfium.so" />
+    <EmbeddedNativeLibrary Include="lib\x86_64\libjniPdfium.so" />
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\default_scroll_handle_bottom.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\default_scroll_handle_left.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\default_scroll_handle_right.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\default_scroll_handle_top.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
