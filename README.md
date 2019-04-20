@@ -9,7 +9,7 @@ Library for displaying PDF documents on Xamarin Android, with `animations`, `ges
 Available on NuGet: [Xamarin.Android.PdfViewer](https://www.nuget.org/packages/Xamarin.Android.PdfViewer) 
 
 ## Include PDFView in your layout
-`<com.github.barteksc.pdfviewer.PDFView
+`<PdfViewer.PdfView
         android:id="@+id/pdfView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>`
@@ -152,6 +152,6 @@ You can use a combination of the following settings to get scroll and fling beha
 
 ## One more thing
 
-
+If you like my project You can [![Donate to this project using Paypal](https://camo.githubusercontent.com/11b2f47d7b4af17ef3a803f57c37de3ac82ac039/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f70617970616c2d646f6e6174652d79656c6c6f772e737667)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=334PPRBZTY3J8&source=url)
 If you have any suggestions on making this lib better, write me, create issue or write some code and send pull request.
 ```
